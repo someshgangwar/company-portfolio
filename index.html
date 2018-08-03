@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css"> </head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="firstscreen">
+                    <div class="col-md-12">
+                        <div class="center-txt">
+                            <p>The Best Project we did proudly</p> <a href="#projList" class="primary-btn d-inline-flex align-items-center"><span class="mr-10">Scroll Down</span><span class="lnr lnr-arrow-right"></span></a> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="projList">
+                <div class="projList" ng-repeat="project in projects">
+                    <div class="col-md-6">
+                        <h2>{{project.name}}</h2>
+                        <p>{{project.description}}</p> <a class="btn btn-primary btn-cstm" href="{{project.url}}" target="_blank"><span class="mr-10">Learn Details</span></a> </div>
+                    <div class="col-md-6 projtilepic">
+                        <div class="projImage"> <img src="{{project.image}}" alt="" class="img-fluid"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.projects = [
+                {
+                    name: 'PeopleLink'
+                    , description: 'Build software products that make everyday business interactions within the organization and with the outside world smarter. In essence, creating nextgen worker &amp; customer experiences through design &amp; technology.'
+                    , url: 'http://peoplelinkvc.com'
+                    , image: 'img/ppl.jpg'
+                }, {
+                    name: 'Meridian School'
+                    , description: 'Meridian School is a high school, founded in 1995 in Hyderabad, India. The school follows the Central Board of Secondary Education (CBSE) syllabus. Meridian School has a branch in Madhapur (established in 2006), as well as in Kukatpally (established in 2008). The main is located in Banjara Hills.'
+                    , url: 'http://meridianschool.in'
+                    , image: 'img/meridian.jpg'
+                }, {
+                    name: 'Think4sat'
+                    , description: 'Think4sat ACT Preparation classes started in 2010, hundreds of students for SAT/PSAT/ACT during the past 6 years October providing instruction for the new SAT and PSAT curriculum from July 2015'
+                    , url: 'http://think4sat.com'
+                    , image: 'img/think4sat.jpg'
+                }, {
+                    name: 'Olivers Early Learning'
+                    , description: 'Olivers Early Learning Center by Meridian among one of the best 100 pre schools in India and Best pre-school in Telangana.Pre School in Jubilee Hills.'
+                    , url: 'https://www.oliversearlylearning.com/'
+                    , image: 'img/oliver.jpg'
+                }, {
+                    name: 'Khuranas'
+                    , description: 'Khuranas is an iconic brand in Kurta Pyjamas and Pathani Suits founded over two decades ago. A formidable name in Hyderabad India has over the years become a household name, trusted for its unquestioned quality, unbeatable pricing, a never ending variety and an obsession to finest finish.'
+                    , url: 'http://www.khuranas.in'
+                    , image: 'img/khuranas.jpg'
+                }, {
+                    name: 'Philadec'
+                    , description: 'Philadec is the world’s largest maker of soft furnishing fabrics. Everyday our factories create over 120,000 sq mtrs of high quality fabrics for homes around the world. We are proud to be ‘globally local’, understanding the aesthetic sensibilities of every country that we touch.'
+                    , url: 'http://www.Philadec.com'
+                    , image: 'img/philadec.jpg'
+                }, {
+                    name: 'Phoenix Greens'
+                    , description: 'Phoenix Greens has been crowned as one of the finest schools in Hyderabad that always strive at creating responsible and ethical young students. We highly value our teachers and ensure they get the utmost support and comfort from our end. '
+                    , url: 'http://www.phoenixgreens.com'
+                    , image: 'img/phoenix.jpg'
+                }, {
+                    name: 'Kairos'
+                    , description: 'Kairos makes you the most beautiful in any room you walk into. With us, revel in that moment where time seems to stop as everyone turns their attention to you. At Kairos, we have a knack for knowing what the perfect, dazzling look for you.'
+                    , url: 'http://kairossalonandspa.com/developer/'
+                    , image: 'img/kairos.jpg'
+                }, {
+                    name: 'Think Digital'
+                    , description: 'A Premier Digital Promotion Agency that helps brands interact and connect with their target audience. Our success is due to a philosophy, which includes helping our clients meet their expectations and thinking beyond.'
+                    , url: 'http://thinkdigital.xyz/'
+                    , image: 'img/thinkdigital.jpg'
+                }, {
+                    name: 'Oasis Tiles'
+                    , description: 'The Oasis group is India’s leading company in exporting and manufacturing Wall tiles, Vitrified tiles and Sanitary ware products.Oasis has been awarded the Consumer’s Choice Fast 50 Brands 2016 and the Power Brands Rising Star 2016 , storming its way to the top of ceramic tiles brands in India.'
+                    , url: 'https://www.oasistiles.in'
+                    , image: 'img/oasis.jpg'
+                }, {
+                    name: 'SiriPipes'
+                    , description: 'SiriPipes have been the primary dealers in HDPE pipes and fittings for over a decade. SiriPipes provide an extensive solution for water supply system, agriculture system, industry system along with solutions to turnkey projects.'
+                    , url: 'http://siripipes.com/'
+                    , image: 'img/siripipes.jpg'
+                }
+            , ];
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    // Store hash
+                    var hash = this.hash;
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
+</body>
+
+</html>
